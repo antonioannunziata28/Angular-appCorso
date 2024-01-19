@@ -1,0 +1,12 @@
+<button mat-mini-fab color="primary" (click)="addUtente()">
+    <mat-icon>add</mat-icon>
+</button>
+
+<mat-nav-list>
+    <a mat-list-item [routerLink]="['utente', utente.id]" *ngFor="let utente of utenti">
+    <p matListItemTitle>{{ utente.nome}}</p>
+    <p matListItemLine>{{ utente.sede}}</p>
+    <mat-divider></mat-divider>
+    </a>
+    
+</mat-nav-list>

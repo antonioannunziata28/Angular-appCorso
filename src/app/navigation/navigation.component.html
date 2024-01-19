@@ -1,0 +1,10 @@
+<mat-toolbar>
+    <span>{{ title }}</span>
+    <button mat-raised-button="accent" (click)="logOut()">
+        Logout
+    </button>
+</mat-toolbar>
+
+<div class="page-wrapper">
+    <router-outlet></router-outlet>
+</div>

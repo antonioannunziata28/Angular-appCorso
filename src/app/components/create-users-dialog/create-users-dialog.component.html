@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Crea un nuovo utente</h2>
+<mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="utente.nome" placeholder="Nome utente">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Sede</mat-label>
+        <input matInput [(ngModel)]="utente.sede" placeholder="Sede di appartenenza">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Presentazione</mat-label>
+        <input matInput [(ngModel)]="utente.presentazione" placeholder="Scrivi una breve presentazione">
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close cdkFocusInitial>Annulla</button>
+    <button mat-button (click)="close()" [disabled]="!(utente.nome && utente.sede && utente.presentazione)">Salva</button>
+</mat-dialog-actions>
+
