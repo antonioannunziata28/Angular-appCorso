@@ -1,10 +1,28 @@
-<mat-toolbar>
-    <span>{{ title }}</span>
-    <button mat-raised-button="accent" (click)="logOut()">
-        Logout
-    </button>
-</mat-toolbar>
+<mat-toolbar class="navbar">
+    <span class="title">{{ title }}</span>
+    <span class="spacer"></span>
 
+        <button mat-raised-button="accent" [matMenuTriggerFor]="menu" aria-label="Main menu">
+            <mat-icon class="title">menu</mat-icon>
+            <span class="title">Menu</span>
+        </button>
+        <mat-menu #menu="matMenu">
+            <div class="user-info">
+                <span class="title">{{ username }}</span>
+            </div>
+            <a mat-menu-item routerLink="/">
+                <mat-icon class="title">list</mat-icon>
+                <span class="title">Visualizza utenti</span>
+            </a>
+        </mat-menu>
+
+        <button mat-raised-button="accent" (click)="logOut()">
+            <mat-icon class="title">logout</mat-icon>
+            <span class="title">Logout</span>
+        </button>
+
+</mat-toolbar>
 <div class="page-wrapper">
+    
     <router-outlet></router-outlet>
 </div>

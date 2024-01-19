@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Utente } from '../../model/utente';
 import { UtenteService } from '../../services/utente.service';
 import { Observable, map, switchMap } from 'rxjs';
 import { CreateUsersDialogComponent } from '../../components/create-users-dialog/create-users-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { TitleService } from '../../services/title.service';
+
 
 @Component({
   selector: 'app-utente',
@@ -20,14 +21,14 @@ export class UtenteComponent implements OnInit{
     private readonly dialog: MatDialog,
     private readonly titleService: TitleService
     ) {
-    
   }
 
   ngOnInit(): void {
-    this.utenteService.getAllUtenti().pipe(
-      map((utenti: Utente[]) => this.utenti = utenti)
-    )
-    .subscribe();
+    this.utenteService.getAllUtenti()
+     .subscribe((utenti: Utente[]) => {
+      this.utenti = utenti;
+     });
+    
     this.titleService.title.next('Lista degli utenti');
   }
 

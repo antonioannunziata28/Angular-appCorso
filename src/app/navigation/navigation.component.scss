@@ -3,3 +3,24 @@
     margin: 0 auto;
     padding: 1.5em;
 }
+
+.navbar{
+    position: fixed;
+    z-index: 1;
+    background: linear-gradient(218deg, rgba(216, 216, 216, 0.95) 0%, rgba(239, 239, 239, 0.95) 70%);
+    box-shadow: 1px 10px 33px 1px rgba(176,176,176,0.73);
+    -webkit-box-shadow: 1px 10px 33px 1px rgba(176,176,176,0.73);
+    -moz-box-shadow: 1px 10px 33px 1px rgba(176,176,176,0.73);
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.user-info {
+    padding: 1em;
+}
+
+.title {
+    color: #8500eb;
+}

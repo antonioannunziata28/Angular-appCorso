@@ -1,13 +1,18 @@
-<div *ngIf="utente">
 
-    <button mat-mini-fab color="warn" (click)="delete(utente)">
-        <mat-icon>delete</mat-icon>
-    </button>
 
-    <h4>{{ utente.nome}}</h4>
-    <small>{{ utente.sede }}</small>
-    <p>{{utente.presentazione}}</p>
-</div>
+            <div *ngIf="utente">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <img src="https://img.freepik.com/premium-vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol-neumorphic-ui-ux-white-user-interface-web-button-neumorphism-vector-eps-10_399089-2757.jpg" class="card-img-top" alt="{{utente.nome}}">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ utente.nome}}</h5>
+                        <small>{{ utente.sede }}</small>
+                    <p class="card-text">{{utente.presentazione}}</p>
+                    <button mat-mini-fab color="warn" (click)="delete(utente)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    </div>
+                </div>
+            </div>
 
 <div *ngIf="!utente">
     <h4>Utente non trovato!</h4>

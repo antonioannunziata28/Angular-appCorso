@@ -13,16 +13,18 @@ import { map } from 'rxjs';
 export class NavigationComponent implements OnInit {
 
   title: string = '';
+  username?: string;
 
   constructor(
     private readonly authService: AuthService,
     private readonly snackBar: MatSnackBar,
     private readonly titleService: TitleService,
     private readonly ref: ChangeDetectorRef,
-    private readonly router: Router
+    private readonly router: Router,
   ) {}
 
   ngOnInit(): void {
+   this.username =this.authService.getAuth()?.username;
       this.titleService.title
        .pipe(
         map(title => {
@@ -31,6 +33,7 @@ export class NavigationComponent implements OnInit {
         })
        )
        .subscribe();
+       
   }
 
   logOut(){

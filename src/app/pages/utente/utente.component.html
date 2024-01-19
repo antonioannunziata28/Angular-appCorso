@@ -1,12 +1,30 @@
-<button mat-mini-fab color="primary" (click)="addUtente()">
-    <mat-icon>add</mat-icon>
-</button>
+<div class="pt-5">
+    <button mat-mini-fab color="primary" (click)="addUtente()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
 
-<mat-nav-list>
-    <a mat-list-item [routerLink]="['utente', utente.id]" *ngFor="let utente of utenti">
-    <p matListItemTitle>{{ utente.nome}}</p>
-    <p matListItemLine>{{ utente.sede}}</p>
-    <mat-divider></mat-divider>
-    </a>
-    
-</mat-nav-list>
+<div class="container">
+    <div class="row gx-5">
+        <div class="d-flex flex-wrap pt-3">
+            
+            <div class="p-3 col-12 col-md-6" *ngFor="let utente of utenti">
+                <div class="card card-design">
+                    <div class="card-header">
+                    Utente
+                    </div>
+                    <div class="card-body">
+                    <h3 class="card-title">{{utente.nome}}</h3>
+                    <p class="card-text">{{utente.presentazione}}</p>
+                    <a [routerLink]="['utente', utente.id]" class="btn btn-card">Dettagli utente</a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+
+

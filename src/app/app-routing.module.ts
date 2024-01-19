@@ -4,10 +4,12 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { UtenteComponent } from './pages/utente/utente.component';
 import { UtenteDetailsComponent } from './pages/utente-details/utente-details.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './services/guards/auth.guard';
 
 const routes: Routes = [
   { path: '',
   component: NavigationComponent,
+  canActivate: [AuthGuard],
   children: [
     {
       path: '',
@@ -15,7 +17,8 @@ const routes: Routes = [
     },
     {
       path: 'utente/:id',
-      component: UtenteDetailsComponent
+      component: UtenteDetailsComponent,
+      canActivate: [AuthGuard]
     }
   ]
 },
